@@ -1,19 +1,5 @@
-import {Schema, model, Document} from "mongoose";
-import {UserRole} from "../types/auth.types.js";
-
-
-export interface IUserData {
-    name: string;
-    email: string;
-    password: string;
-    image?: string;
-    role?: string;
-    refreshToken?: string;
-}
-
-export interface IUser extends Document, IUserData {}
-
-
+import { Schema, model, Document } from "mongoose";
+import { UserRole } from "../types/auth.types.js";
 const userSchema = new Schema({
     email: {
         type: String,
@@ -45,9 +31,6 @@ const userSchema = new Schema({
         required: true,
         unique: true
     }
-
-}, {timestamps: true});
-
+}, { timestamps: true });
 const User = model("User", userSchema);
-
 export default User;
