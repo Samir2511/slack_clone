@@ -1,5 +1,5 @@
 import {Schema, model, Document} from "mongoose";
-import {UserRole} from "../types/auth.types.js";
+import {UserRole} from "../types/auth.types.ts";
 
 
 export interface IUserData {

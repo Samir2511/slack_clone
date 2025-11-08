@@ -5,8 +5,8 @@
   "main": "server.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/server.js",
-    "dev": "nodemon src/server.ts"
+    "start": "NODE_OPTIONS='--import ./instrument.mjs' node dist/server.js",
+    "dev": "NODE_OPTIONS='--import ./instrument.mjs' nodemon src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
   "type": "module",
   "dependencies": {
     "@clerk/express": "^1.7.42",
+    "@sentry/node": "^10.23.0",
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -21,7 +22,8 @@
     "express": "^5.1.0",
     "inngest": "^3.44.3",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.19.2"
+    "mongoose": "^8.19.2",
+    "stream-chat": "^9.25.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
